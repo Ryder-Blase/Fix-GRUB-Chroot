@@ -86,7 +86,7 @@ If needed, update `/etc/fstab` to reflect the correct UUIDs.
 Now that you've chrooted into your system and ensured `/etc/fstab` is correct, it's time to reinstall GRUB. Run the following command to reinstall GRUB to the correct device. Replace `/dev/sda` with the appropriate device (usually `/dev/sda` for MBR or `/dev/nvme0n1` for NVMe SSDs):
 
 ```bash
-sudo grub-install --efi-directory=/boot/efi/ /dev/sda
+grub-install --efi-directory=/boot/efi/ /dev/sda
 ```
 
 - For UEFI systems, the `--efi-directory` option points to the EFI system partition (usually `/boot/efi`).
@@ -96,7 +96,7 @@ sudo grub-install --efi-directory=/boot/efi/ /dev/sda
 After installing GRUB, you need to update its configuration to detect your installed kernels and boot options. Run the following command:
 
 ```bash
-sudo update-grub
+update-grub
 ```
 
 This command will scan for installed operating systems and kernels and update the GRUB configuration file accordingly.
